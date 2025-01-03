@@ -18,16 +18,11 @@ class MustVerifyEmail
     {
         $user = Auth::user();
         if (Auth::user()->hasRole('School Admin')) {
-<<<<<<< HEAD
-            if (!$user->hasVerifiedEmail()) {
-                return redirect('/email/verify');
-            }
-=======
             // if (!$user->hasVerifiedEmail()) {
             //     return redirect('/email/verify');
             // }
->>>>>>> acbb587 (First commit)
         }
         return $next($request);
     }
 }
+
