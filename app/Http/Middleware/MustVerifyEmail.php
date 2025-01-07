@@ -18,9 +18,9 @@ class MustVerifyEmail
     {
         $user = Auth::user();
         if (Auth::user()->hasRole('School Admin')) {
-            // if (!$user->hasVerifiedEmail()) {
-            //     return redirect('/email/verify');
-            // }
+            if (!$user->hasVerifiedEmail()) {
+                return redirect('/email/verify');
+            }
         }
         return $next($request);
     }

@@ -93,7 +93,7 @@ class RoleController extends Controller {
         ResponseService::noFeatureThenRedirect('Staff Management');
         ResponseService::noPermissionThenRedirect('role-create');
         $permission = Permission::whereHas('roles', static function ($q) {
-            $q->where('name', '!=', 'Teacher');
+            $q->where('name', '!=', '');
         })->orderBy('name')->get();
         return view('roles.create', compact('permission'));
     }
