@@ -25,3 +25,4 @@ class MustVerifyEmail
         return $next($request);
     }
 }
+
